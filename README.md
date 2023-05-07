@@ -1,6 +1,6 @@
 # Get Git Release
 
-Downloads a github release file to a directory. 
+Downloads a Github release file the current working directory. 
 
 The release can get the 'latest' release by default or a specific Github version tag.
 
@@ -39,4 +39,37 @@ if you want the windows release you can add something like `-windows-`. The code
     description: 'name of release that was downloaded'
 
 ## Example usage
-TODO
+```
+name: Complete workflow for downloading XH release
+on: 
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: download xh 
+      id: download-xh
+      uses: kc8/get_git_release@main
+      with:
+        gh_repo: 'ducaale/xh' 
+        pattern_in_name: 'x86_64-unknown-linux-musl.tar.gz'
+
+    - name: Un-Tar Xh
+      shell: bash
+      run: | 
+        ls -lah
+        mkdir xh_bin_dir
+        ls -lah
+        tar -xvf ${{ steps.download-xh.outputs.file_name }} -C xh_bin_dir --strip-components 1
+        ls ./xh_bin_dir -lah
+
+    - name: run XH
+      shell: bash
+      run: | 
+        chmod +x ./xh_bin_dir/xh
+        ./xh_bin_dir/xh httpbin.org/json
+```
