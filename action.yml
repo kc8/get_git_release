@@ -1,0 +1,29 @@
+name: 'Get Git Release'
+description: 'Download a git release to a directory'
+inputs:
+    gh-repo:
+      description: 'repo in the form of OWNER/REPO'
+      required: true
+    download_to_dir: 
+      description: 'where to download the release'
+      required: true
+    pattern_in_name: 
+      description: 'the pattern to search for in the name of the download'
+      required: true 
+    gh_pat_token: 
+      description: 'github PAT token allowing access to repo and release (public repos do not need this)'
+      required: false 
+      default: ''
+    tag-version-to-get: 
+      description: 'the github tag version to download'
+      required: false 
+      default: 'latest'
+    ghe_url:
+      description: 'Github Enterprise url'
+      required: false 
+outputs:
+  file_name:
+    description: 'name of release that was downloaded'
+runs:
+  using: 'node16'
+  main: 'index.js'
