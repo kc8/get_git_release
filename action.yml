@@ -1,7 +1,7 @@
 name: 'Get Git Release'
 description: 'Download a git release to a directory'
 inputs:
-    gh-repo:
+    gh_repo:
       description: 'repo in the form of OWNER/REPO'
       required: true
     download_to_dir: 

@@ -10,7 +10,7 @@ if you want the windows release you can add something like `-windows-`. The code
 
 ## Inputs
 
-### gh-repo:
+### gh_repo:
   description: 'repo in the form of OWNER/REPO'
   required: true
 
