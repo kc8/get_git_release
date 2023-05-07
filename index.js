@@ -7,7 +7,7 @@ core.setSecret('gh_pat_token');
 core.setSecret(ghPatToken);
 
 const requested_dir = core.getInput('download_to_dir');
-const ghUrl = core.getInput('gh-repo').split('/');
+const ghUrl = core.getInput('gh_repo').split('/');
 const owner = ghUrl[0];
 const repo = ghUrl[1];
 
