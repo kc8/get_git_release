@@ -14,10 +14,6 @@ if you want the windows release you can add something like `-windows-`. The code
   description: 'repo in the form of OWNER/REPO'
   required: true
 
-### download_to_dir: 
-  description: 'where to download the release'
-  required: true
-
 ### pattern_in_name: 
   description: 'the pattern to search for in the name of the download'
   required: true 

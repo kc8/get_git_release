@@ -6,7 +6,6 @@ const ghPatToken = core.getInput('gh_pat_token');
 core.setSecret('gh_pat_token');
 core.setSecret(ghPatToken);
 
-const requested_dir = core.getInput('download_to_dir');
 const ghUrl = core.getInput('gh_repo').split('/');
 const owner = ghUrl[0];
 const repo = ghUrl[1];
@@ -93,7 +92,7 @@ async function downloadAsset(releaseIdConfig) {
         data: assetData,
     } = asset_bin;
     const assetBuffer = Buffer.from(new Uint8Array(assetData));
-    fs.writeFile(`${requested_dir}/${asset_name}`, assetBuffer, onError);
+    fs.writeFile(`./${asset_name}`, assetBuffer, onError);
     core.setOutput('file_name', asset_name);
 }
 
