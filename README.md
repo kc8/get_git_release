@@ -2,10 +2,11 @@
 
 Downloads a github release file to a directory. 
 
-The release can get 'latest' by default or a specific github version tag
+The release can get the 'latest' release by default or a specific Github version tag.
 
-The pattern in name can be used to target a specific file to download. For example 
-if you want the windows release you can add something like `-windows-`
+The 'pattern in name' can be used to target a specific file to download. For example 
+if you want the windows release you can add something like `-windows-`. The code will do a 
+`.contains(...)` to find a matching file.
 
 ## Inputs
 
