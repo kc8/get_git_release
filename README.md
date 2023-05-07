@@ -1,6 +1,6 @@
 # Get Git Release
 
-Downloads a Github release file the current working directory. 
+Downloads a Github release file to the current working directory. 
 
 The release can get the 'latest' release by default or a specific Github version tag.
 
@@ -10,33 +10,28 @@ if you want the windows release you can add something like `-windows-`. The code
 
 ## Inputs
 
-### gh_repo:
-  description: 'repo in the form of OWNER/REPO'
+## gh_repo:
+  description: 'Repo in the form of OWNER/REPO'
   required: true
-
-### pattern_in_name: 
-  description: 'the pattern to search for in the name of the download'
+## pattern_in_name: 
+  description: 'The pattern to search for in the name of the download'
   required: true 
-  exampe: '-gha-'
-
-### gh_pat_token: 
-  description: 'github PAT token allowing access to repo and release (public repos do not need this)'
+## gh_pat_token: 
+  description: 'Github PAT token allowing access to repo and release (public repos do not need this)'
   required: false 
   default: ''
-
-### tag-version-to-get: 
-  description: 'the github tag version to download'
+## tag-version-to-get: 
+  description: 'the Github tag version to download'
   required: false 
   default: 'latest'
-
-### ghe_url:
+## ghe_url:
   description: 'Github Enterprise url'
   required: false 
 
 ## Outputs
 
 ### file_name:
-    description: 'name of release that was downloaded'
+  description: 'name of release that was downloaded'
 
 ## Example usage
 ```
