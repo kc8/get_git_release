@@ -1,19 +1,18 @@
 const core = require("@actions/core");
-const github = require("@actions/github");
 const fs = require('fs');
 const octokit = require("octokit");
 
-const ghPatToken = '' //core.getInput('gh_pat_token');
+const ghPatToken = core.getInput('gh_pat_token');
 core.setSecret('gh_pat_token');
 core.setSecret(ghPatToken);
 
-const requested_dir = './'; //core.getInput('download_to_dir');
-const ghUrl = 'ducaale/xh'.split('/'); // core.getInput('gh-repo').split('/');
+const requested_dir = core.getInput('download_to_dir');
+const ghUrl = core.getInput('gh-repo').split('/');
 const owner = ghUrl[0];
 const repo = ghUrl[1];
 
-const tag_version = 'latest' // core.getInput('tag-version-to-get');
-const pattern_in_name = '-x86_64-unknown-' // core.getInput('pattern_in_name');
+const tag_version = core.getInput('tag-version-to-get');
+const pattern_in_name = core.getInput('pattern_in_name');
 const gheUrl = core.getInput('ghe_url');
 const ok = gheUrl && gheUrl.length > 0 ? new octokit.Octokit({ auth: ghPatToken }) : new octokit.Octokit({ auth: ghPatToken, baseUrl: gheUrl });
 
