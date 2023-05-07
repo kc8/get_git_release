@@ -10,21 +10,21 @@ if you want the windows release you can add something like `-windows-`. The code
 
 ## Inputs
 
-## gh_repo:
+### gh_repo:
   description: 'Repo in the form of OWNER/REPO'
   required: true
-## pattern_in_name: 
+### pattern_in_name: 
   description: 'The pattern to search for in the name of the download'
   required: true 
-## gh_pat_token: 
+### gh_pat_token: 
   description: 'Github PAT token allowing access to repo and release (public repos do not need this)'
   required: false 
   default: ''
-## tag-version-to-get: 
+### tag-version-to-get: 
   description: 'the Github tag version to download'
   required: false 
   default: 'latest'
-## ghe_url:
+### ghe_url:
   description: 'Github Enterprise url'
   required: false 
 
