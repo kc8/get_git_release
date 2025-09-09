@@ -1,5 +1,8 @@
 # Get Git Release
 
+# As of Sept. 2025 this action is deprecated and should not longer be used
+![deprecated icon](https://camo.githubusercontent.com/ca21b63f789c7042bd0cbb1f972441c269a158afaeeac86f5800747323ea2431/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374617475732d646570726563617465642d726564)
+
 Downloads a Github release file to the current working directory. 
 
 The release can get the 'latest' release by default or a specific Github version tag.

@@ -4,20 +4,25 @@ inputs:
     gh_repo:
       description: 'Repo in the form of OWNER/REPO'
       required: true
+      deprecationMessage: "This Github action is no longer maintained, please find an alternative action" 
     pattern_in_name: 
       description: 'The pattern to search for in the name of the download'
       required: true 
+      deprecationMessage: "This Github action is no longer maintained, please find an alternative action" 
     gh_pat_token: 
       description: 'Github PAT token allowing access to repo and release (public repos do not need this)'
       required: false 
       default: ''
+      deprecationMessage: "This Github action is no longer maintained, please find an alternative action" 
     tag-version-to-get: 
       description: 'the Github tag version to download'
       required: false 
       default: 'latest'
+      deprecationMessage: "This Github action is no longer maintained, please find an alternative action" 
     ghe_url:
       description: 'Github Enterprise url'
       required: false 
+      deprecationMessage: "This Github action is no longer maintained, please find an alternative action" 
 outputs:
   file_name:
     description: 'Name of the release that was downloaded'
